@@ -61,22 +61,22 @@ graph LR
 
 ```mermaid
 graph TD
-    subgraph "Couche Sémantique (Règles)"
-        RE[<b>Regulatory Element</b><br/><i>Ex: Traffic Light, Stop, Speed Limit</i>]
+    subgraph Couche_Semantique [Couche Semantique - Regles]
+        RE[Regulatory Element - ex. Traffic Light / Stop / Speed Limit]
     end
 
-    subgraph "Couche Topologique (Voies)"
-        LL[<b>Lanelet</b><br/><i>Portion de voie (Surface navigable)</i>]
+    subgraph Couche_Topologique [Couche Topologique - Voies]
+        LL[Lanelet - Portion de voie navigable]
     end
 
-    subgraph "Couche Géométrique (Lignes)"
-        LS_L[Linestring : Left Bound]
-        LS_R[Linestring : Right Bound]
-        LS_C[<i>Linestring : Centerline (Générée)</i>]
+    subgraph Couche_Geometrique [Couche Geometrique - Lignes]
+        LS_L[Linestring - Bord gauche]
+        LS_R[Linestring - Bord droit]
+        LS_C[Linestring - Centerline calculee]
     end
 
-    subgraph "Couche Physique (Points)"
-        P[<b>Points 3D</b><br/><i>ID, Lat, Lon, Ele</i>]
+    subgraph Couche_Physique [Couche Physique - Points]
+        P[Points 3D - ID / Latitude / Longitude / Elevation]
     end
 
     %% Relations
@@ -85,5 +85,5 @@ graph TD
     LS_L --> LL
     LS_R --> LL
     LS_C -.-> LL
-    LL <--> |Referenced by| RE
+    LL <--> RE
 ```
