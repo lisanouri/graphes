@@ -58,3 +58,32 @@ graph LR
     Match -->|Yes| Control[Action: Stop/Go]
     Match -->|No| Ignore[Ignore: Secondary Light]
 ```
+
+```mermaid
+graph TD
+    subgraph "Couche Sémantique (Règles)"
+        RE[<b>Regulatory Element</b><br/><i>Ex: Traffic Light, Stop, Speed Limit</i>]
+    end
+
+    subgraph "Couche Topologique (Voies)"
+        LL[<b>Lanelet</b><br/><i>Portion de voie (Surface navigable)</i>]
+    end
+
+    subgraph "Couche Géométrique (Lignes)"
+        LS_L[Linestring : Left Bound]
+        LS_R[Linestring : Right Bound]
+        LS_C[<i>Linestring : Centerline (Générée)</i>]
+    end
+
+    subgraph "Couche Physique (Points)"
+        P[<b>Points 3D</b><br/><i>ID, Lat, Lon, Ele</i>]
+    end
+
+    %% Relations
+    P --> LS_L
+    P --> LS_R
+    LS_L --> LL
+    LS_R --> LL
+    LS_C -.-> LL
+    LL <--> |Referenced by| RE
+```
