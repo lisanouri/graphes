@@ -120,11 +120,11 @@ graph TD
 
 ```mermaid
 graph LR
-    A[<b>Manager</b><br/>Le Cerveau] -- 1. "Où je les mets ?" --> B[<b>Map Server</b><br/>La Carte]
-    B -- 2. "Ici (X, Y, Angle)" --> A
-    A -- 3. Stockage local --> C[(Mémoire)]
-    C -- 4. Utilisation --> D[<b>Gazebo</b><br/>Simulation]
-    C -- 4. Utilisation --> E[<b>RViz</b><br/>Visualisation]
+    A[<b>Manager</b><br/>Le Cerveau] -- 1. Demande position --> B[<b>Map Server</b><br/>La Carte]
+    B -- 2. Envoie coordonnées --> A
+    A -- 3. Note la position --> C[(Mémoire)]
+    C -- 4. Déplace le robot --> D[<b>Gazebo</b>]
+    C -- 4. Affiche le cube --> E[<b>RViz</b>]
 
     style A fill:#e1f5fe,stroke:#01579b
     style B fill:#fff3e0,stroke:#e65100
