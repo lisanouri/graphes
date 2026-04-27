@@ -130,3 +130,17 @@ graph LR
     style B fill:#fff3e0,stroke:#e65100
     style D fill:#e8f5e9,stroke:#2e7d32
 ```
+
+```mermaid
+graph TD
+    A[<b>Départ</b><br/>Besoin d'un Goal] --> B{Parcourir la Carte}
+    B --> C[Liste de toutes les routes<br/><i>Lanelets candidates</i>]
+    C --> D[<b>Tirage au sort</b><br/>std::mt19937]
+    D --> E[Route choisie au hasard]
+    E --> F[Prendre le point au milieu<br/><i>Centerline [size/2]</i>]
+    F --> G[Calculer l'angle de la route<br/><i>Yaw</i>]
+    G --> H[<b>Goal Validé</b><br/>X, Y, Orientation]
+
+    style D fill:#fff3e0,stroke:#e65100,stroke-width:2px
+    style H fill:#e8f5e9,stroke:#2e7d32,stroke-width:2px
+```
