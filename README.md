@@ -132,7 +132,7 @@ graph LR
 ```
 
 ```mermaid
-graph TD
+graph LR
     A[<b>Départ</b><br/>Besoin d'un Goal] --> B{Parcourir la Carte}
     B --> C[Liste des routes valides (Lanelets)]
     C --> D[<b>Tirage au sort</b><br/>std::mt19937</b>]
