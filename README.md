@@ -137,7 +137,7 @@ graph LR
     B --> C["Liste des routes valides (Lanelets)"]
     C --> D[<b>Tirage au sort</b><br/>std::mt19937</b>]
     D --> E[Lanelet choisie au hasard]
-    E --> F[<b>Positionnement sur la Lanelet</b><br/>"Point au milieu de la centerline"]
+    E --> F[<b>Positionnement sur la Lanelet</b><br/>Point au milieu de la centerline]
     F --> G[Calcul l'angle de la route]
     G --> H[<b>Goal Validé</b><br/>X, Y, Yaw</b>]
 
