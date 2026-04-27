@@ -132,14 +132,14 @@ graph LR
 ```
 
 ```mermaid
-graph TD
-    A[<b>Départ</b><br/>Besoin d'un Goal] --> B{Parcourir la Carte}
-    B --> C["Liste des routes valides (Lanelets)"]
-    C --> D[<b>Tirage au sort</b><br/>std::mt19937]
-    D --> E[Route choisie au hasard]
-    E --> F["Point au milieu de la ligne (index size/2)"]
-    F --> G[Calculer l'angle de la route]
-    G --> H[<b>Goal Validé</b><br/>X, Y, Yaw]
+graph LR
+    A[<b>Départ</b>] --> B{Carte}
+    B --> C[Routes valides]
+    C --> D[<b>Tirage au sort</b>]
+    D --> E[Route choisie]
+    E --> F[Point milieu]
+    F --> G[Angle]
+    G --> H[<b>Goal Validé</b>]
 
     style D fill:#fff3e0,stroke:#e65100,stroke-width:2px
     style H fill:#e8f5e9,stroke:#2e7d32,stroke-width:2px
